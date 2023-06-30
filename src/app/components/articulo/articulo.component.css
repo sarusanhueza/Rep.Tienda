@@ -1,0 +1,33 @@
+.row{
+    display: flex;
+    box-sizing: border-box;
+}
+
+div{
+    padding: 5px;
+}
+.a{
+    display: flex;
+    width: 50%;
+    padding: 0 5px;
+}
+.b{
+    width: 15%;
+    padding: 0 5px;
+}
+.c{
+    width: 10%;
+    padding: 0 5px;
+}
+.d{
+    width: 15%;
+    font-weight: bolder;
+    color: #e74e28;
+    padding: 0 5px;
+}
+.e{
+    width: 10%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 5px;
+}

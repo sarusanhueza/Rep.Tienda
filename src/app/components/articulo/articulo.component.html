@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="a">
+        <input type="checkbox" [checked]="articulo.completed">
+        {{articulo.title}}
+    </div>
+    <div class="b">
+        {{articulo.price | currency}}
+    </div>
+    <div class="c">
+        {{articulo.quantity }}
+    </div>
+    <div class="d">
+        {{(articulo.price*articulo.quantity)| currency}}
+    </div>
+    <div class="e">
+        <button (click)="onDelete(articulo)">Eliminar</button>
+    </div>
+</div>
