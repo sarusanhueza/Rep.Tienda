@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule//aca le indicamos que trabajamos con formularios y asi no marcar un error en el ts
   ],
   providers: [],
   bootstrap: [AppComponent]
