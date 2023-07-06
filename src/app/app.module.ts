@@ -6,6 +6,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { TotalComponent } from './components/total/total.component';
+import { AdditemComponent } from './components/additem/additem.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +15,13 @@ import { TotalComponent } from './components/total/total.component';
     InicioComponent,
     ItemsComponent,
     ArticuloComponent,
-    TotalComponent
+    TotalComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
