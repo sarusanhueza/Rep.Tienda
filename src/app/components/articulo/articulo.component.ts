@@ -13,5 +13,7 @@ export class ArticuloComponent {
   onDelete(articulo:Item){
   this.deleteart.emit(articulo);
   }
-  
+  onToggle(articulo: Item){
+    articulo.completed = !articulo.completed;
+  }
 }

@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
+import { TotalComponent } from './components/total/total.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     ItemsComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { Item } from '../modelos/item';
 export class ItemsComponent {
 
 items: Item[] = [];
+total: number= 0 ; //la variable de total esta declarada vacia o en cero y es de tipo numero 
 
 ngOnInit(): void {
   this.items = [
@@ -23,7 +24,7 @@ ngOnInit(): void {
       title: 'Bananas',
       price: 20,
       quantity:  3,
-      completed: true,
+      completed: false,
     },
     {
       id:  2,
@@ -33,10 +34,19 @@ ngOnInit(): void {
       completed: false,
     }
   ];
+
+  this.getTotal();
 }
 
 deleteart(item: Item){
-this.items = this.items.filter(x => x.id  !=  item.id);
+
+this.items = this.items.filter(x => x.id  != item.id);
+  this.getTotal(); //aca se esta actuañizando la variable del total luego de eliminar un articulo
 }
-  
+  getTotal(){
+    this.total = this.items
+                .filter(x => !x.completed)
+                .map(x => x.price*x.quantity)
+                .reduce((acc,x) => acc += x,0);
+  } //esta funcion hace la multiplicacion entre precio y cantidad.
 }
