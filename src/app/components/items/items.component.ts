@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Item } from '../modelos/item';
+import { DatoService } from 'src/app/servicios/dato.service';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -7,40 +8,23 @@ import { Item } from '../modelos/item';
 })
 export class ItemsComponent {
 
-  items: Item[] = [];
+  Items: Item[] = [];
   total: number = 0; //la variable de total esta declarada vacia o en cero y es de tipo numero 
 
-  ngOnInit(): void {
-    this.items = [
-      {
-        id: 0,
-        title: 'Manzanas',
-        price: 10,
-        quantity: 5,
-        completed: false,
-      },
-      {
-        id: 1,
-        title: 'Bananas',
-        price: 20,
-        quantity: 3,
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'kiwis',
-        price: 100,
-        quantity: 1,
-        completed: false,
-      }
-    ];
 
+  constructor(private datoService: DatoService){{
+
+  }}
+  ngOnInit(): void {
+    //this.items = []
+
+    this.Items = this.datoService.getItems();
     this.getTotal();
   }
 
   deleteart(item: Item) {
 
-    this.items = this.items.filter(x => x.id != item.id);
+    this.Items = this.Items.filter(x => x.id != item.id);
     this.getTotal(); //aca se esta actuañizando la variable del total luego de eliminar un articulo
   }
 
@@ -49,7 +33,7 @@ export class ItemsComponent {
   }
 
   getTotal() {
-    this.total = this.items
+    this.total = this.Items
       .filter(x => !x.completed)
       .map(x =>  x.quantity*x.price )
       .reduce((acc, x) => acc += x, 0);
